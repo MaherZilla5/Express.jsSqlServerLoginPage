@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>This is the data from the database</h1>
+
+   <div id="containerDiv">
+    <table>
+        <h1>Employee Table</h1>
+<tr>
+<th>Firstname: </th>
+<th>LastName: </th>
+<th>Title:  </th>
+<th>City: </th>
+</tr>
+
+        <tr>
+           <% try { %>
+            <% employeeObject.forEach((emp) => { %>
+                <tr>
+                    <td><%= emp.FirstName %></td>
+                    <td><%= emp.LastName %></td>
+                    <td><%= emp.Title %></td>
+                    <td><%= emp.City %></td>
+                </tr>
+            
+            <% }); %>
+            <% }catch (error) { %>
+                    <td><%= employeeObject%></td>
+                <% } %>
+        </tr>
+    </table>
+    
+    <table>
+        <h1>Customer Table</h1>
+        <tr>
+            <th>Customer Name</th>
+            <th>Title</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <% try { %>
+            <% customerObject.forEach((customer) => { %>
+                <tr>
+                    <td><%= customer.ContactName %></td>
+                    <td><%= customer.ContactTitle %></td>
+                    <td><%= customer.City %></td>
+                </tr>
+            <% }); %>
+            <% }catch (error) { %>
+                <td><%= customerObject%></td>
+            <% } %>
+        </tr>
+
+    </table>
+    
+    <table>
+        <h1>Orders Table</h1>
+        <tr>
+            <th>OrderID</th>
+            <th>CustomerID</th>
+            <th>ShipAddress</th>
+        </tr>
+        <tr>
+            <% try { %>
+            <% ordersObject.forEach((order) => { %>
+                <tr>
+                    <td><%= order.OrderID %></td>
+                    <td><%= order.CustomerID %></td>
+                    <td><%= order.ShipAddress %></td>
+                </tr>
+            <% }); %>
+            <% }catch (error) { %>
+                <td><%= ordersObject%></td>
+            <% } %>
+        </tr>
+        
+    
+
+    </table>
+</div>
+    
+</body>
+</html>
